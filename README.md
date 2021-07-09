@@ -7,17 +7,17 @@ Repositório com material das aulas de deep learning com R.
 
 ## Ementa
 
-  - **Introdução**
-      - O que é e quando utilizar Deep Learning
-      - O que são redes neurais profundas
-  - **Ajuste**
-      - Ajustando modelos de deep learning no R
-      - O pacote `keras`
-      - Técnicas de regularização
-  - **Arquiteturas**
-      - Redes neurais recorrentes (RNN)
-      - Redes neurais convolucionais (CNN)
-      - *Long short-term memory* (LSTM)
+-   **Introdução**
+    -   O que é e quando utilizar Deep Learning
+    -   O que são redes neurais profundas
+-   **Ajuste**
+    -   Ajustando modelos de deep learning no R
+    -   O pacote `keras`
+    -   Técnicas de regularização
+-   **Arquiteturas**
+    -   Redes neurais recorrentes (RNN)
+    -   Redes neurais convolucionais (CNN)
+    -   *Long short-term memory* (LSTM)
 
 ## Slides
 
@@ -28,20 +28,20 @@ Os slides do curso podem ser encontrados nesse
 
 Os seguintes programas serão instalados. Estamos prevendo algum tempo no
 início do curso para instalar os pacotes mas se você já conseguir
-instalar, melhor\!
+instalar, melhor!
 
-1)  Instale o R\! De preferência a versão mais recente (\>= 4.0).
+1.  Instale o R! De preferência a versão mais recente (&gt;= 4.0).
 
 No Windows você também precisa instalar o [Microsoft Visual C++
-Redistributable for Visual Studio 2015, 2017
-and 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
+Redistributable for Visual Studio 2015, 2017 and
+2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 Baixar a versão x64.
 
-2)  Execute as seguintes linhas de código em uma sessão limpa do R.
+2.  Execute as seguintes linhas de código em uma sessão limpa do R.
     (Certifique-se de fechar todas as outras sessões do R/RStudio que
     estiverem abertas no seu computador).
 
-<!-- end list -->
+<!-- -->
 
     install.packages("reticulate")
     reticulate::install_miniconda()
@@ -49,11 +49,11 @@ Baixar a versão x64.
     keras::install_keras()
     tfhub::install_tfhub()
 
-3)  Verifique a instalação com:
+3.  Verifique a instalação com:
 
-<!-- end list -->
+<!-- -->
 
-    tensorflow::tf_version() # deve retornar 2.2
+    tensorflow::tf_version() # deve retornar 2.4 ou maior
 
 Nesse vídeo você pode ver o passo a passo da instalação no Windows:
 <https://www.youtube.com/watch?v=nSOyfBulXlQ&feature=youtu.be>
@@ -68,7 +68,7 @@ nosso [discourse](https://discourse.curso-r.com/).
 #### Exemplos
 
 | exemplo                      | link                                                                                         | gh\_link                                                                                                |
-| :--------------------------- | :------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
+|:-----------------------------|:---------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------|
 | 01-linear-regression.R       | [link](https://curso-r.github.io/202011-deep-learning/exemplos/01-linear-regression.R)       | [link](https://github.com/curso-r/202011-deep-learning/blob/main/exemplos/01-linear-regression.R)       |
 | 02-sgd.R                     | [link](https://curso-r.github.io/202011-deep-learning/exemplos/02-sgd.R)                     | [link](https://github.com/curso-r/202011-deep-learning/blob/main/exemplos/02-sgd.R)                     |
 | 03-keras.R                   | [link](https://curso-r.github.io/202011-deep-learning/exemplos/03-keras.R)                   | [link](https://github.com/curso-r/202011-deep-learning/blob/main/exemplos/03-keras.R)                   |
@@ -100,7 +100,7 @@ nosso [discourse](https://discourse.curso-r.com/).
 #### Exercicios
 
 | exercicio                    | link                                                                                           | gh\_link                                                                                                  |
-| :--------------------------- | :--------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
+|:-----------------------------|:-----------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
 | 01-linear-regression.R       | [link](https://curso-r.github.io/202011-deep-learning/exercicios/01-linear-regression.R)       | [link](https://github.com/curso-r/202011-deep-learning/blob/main/exercicios/01-linear-regression.R)       |
 | 02-mini-batch-sgd.R          | [link](https://curso-r.github.io/202011-deep-learning/exercicios/02-mini-batch-sgd.R)          | [link](https://github.com/curso-r/202011-deep-learning/blob/main/exercicios/02-mini-batch-sgd.R)          |
 | 03-keras-linear-regression.R | [link](https://curso-r.github.io/202011-deep-learning/exercicios/03-keras-linear-regression.R) | [link](https://github.com/curso-r/202011-deep-learning/blob/main/exercicios/03-keras-linear-regression.R) |
@@ -119,7 +119,7 @@ nosso [discourse](https://discourse.curso-r.com/).
 #### Respostas
 
 | exercicio                    | link                                                                                          | gh\_link                                                                                                 |
-| :--------------------------- | :-------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------- |
+|:-----------------------------|:----------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------|
 | 01-linear-regression.R       | [link](https://curso-r.github.io/202011-deep-learning/respostas/01-linear-regression.R)       | [link](https://github.com/curso-r/202011-deep-learning/blob/main/respostas/01-linear-regression.R)       |
 | 02-mini-batch-sgd.R          | [link](https://curso-r.github.io/202011-deep-learning/respostas/02-mini-batch-sgd.R)          | [link](https://github.com/curso-r/202011-deep-learning/blob/main/respostas/02-mini-batch-sgd.R)          |
 | 03-keras-linear-regression.R | [link](https://curso-r.github.io/202011-deep-learning/respostas/03-keras-linear-regression.R) | [link](https://github.com/curso-r/202011-deep-learning/blob/main/respostas/03-keras-linear-regression.R) |

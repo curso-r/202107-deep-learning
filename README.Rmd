@@ -37,7 +37,6 @@ Os slides do curso podem ser encontrados nesse [link](https://curso-r.github.io/
 
 Os seguintes programas serão instalados. Estamos prevendo algum tempo no início do curso para instalar os pacotes mas se você já conseguir instalar, melhor!
 
-
 1) Instale o R! De preferência a versão mais recente (>= 4.0).
 
 No Windows você também precisa instalar o [Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads). Baixar a versão x64.
@@ -55,7 +54,7 @@ tfhub::install_tfhub()
 3) Verifique a instalação com:
 
 ```
-tensorflow::tf_version() # deve retornar 2.2
+tensorflow::tf_version() # deve retornar 2.4 ou maior
 ```
 
 Nesse vídeo você pode ver o passo a passo da instalação no Windows: https://www.youtube.com/watch?v=nSOyfBulXlQ&feature=youtu.be
