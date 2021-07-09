@@ -1,0 +1,103 @@
+---
+output: github_document
+---
+
+# Deep Learning
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Repositório com material das aulas de deep learning com R.
+
+## Ementa
+
+- **Introdução**
+  - O que é e quando utilizar Deep Learning
+  - O que são redes neurais profundas
+- **Ajuste**
+  - Ajustando modelos de deep learning no R
+  - O pacote `keras`
+  - Técnicas de regularização
+- **Arquiteturas**
+  - Redes neurais recorrentes (RNN)
+  - Redes neurais convolucionais (CNN)
+  - *Long short-term memory* (LSTM)
+
+## Slides
+
+Os slides do curso podem ser encontrados nesse [link](https://curso-r.github.io/202011-deep-learning/slides).
+
+## Instalação
+
+Os seguintes programas serão instalados. Estamos prevendo algum tempo no início do curso para instalar os pacotes mas se você já conseguir instalar, melhor!
+
+
+1) Instale o R! De preferência a versão mais recente (>= 4.0).
+
+No Windows você também precisa instalar o [Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads). Baixar a versão x64.
+
+2) Execute as seguintes linhas de código em uma sessão limpa do R. (Certifique-se de fechar todas as outras sessões do R/RStudio que estiverem abertas no seu computador).
+
+```
+install.packages("reticulate")
+reticulate::install_miniconda()
+install.packages(c("keras", "tfhub"))
+keras::install_keras()
+tfhub::install_tfhub()
+```
+
+3) Verifique a instalação com:
+
+```
+tensorflow::tf_version() # deve retornar 2.2
+```
+
+Nesse vídeo você pode ver o passo a passo da instalação no Windows: https://www.youtube.com/watch?v=nSOyfBulXlQ&feature=youtu.be
+
+## Dúvidas
+
+O melhor lugar para tirar dúvidas relativas ao conteúdo do curso é no nosso [discourse](https://discourse.curso-r.com/).
+
+## Scripts usados em aula
+
+#### Exemplos 
+
+```{r, echo = FALSE}
+knitr::kable(
+  tibble::tibble(
+    exemplo = list.files("exemplos/"),
+    link = paste0("[link](https://curso-r.github.io/202011-deep-learning/exemplos/", exemplo, ")"),
+    gh_link = paste0("[link](https://github.com/curso-r/202011-deep-learning/blob/main/exemplos/", exemplo, ")")
+  )
+)
+```
+
+#### Exercicios
+
+```{r, echo = FALSE}
+knitr::kable(
+  tibble::tibble(
+    exercicio = list.files("exercicios/"),
+    link = paste0("[link](https://curso-r.github.io/202011-deep-learning/exercicios/", exercicio, ")"),
+    gh_link = paste0("[link](https://github.com/curso-r/202011-deep-learning/blob/main/exercicios/", exercicio, ")")
+  )
+)
+```
+
+#### Respostas
+
+```{r, echo = FALSE}
+knitr::kable(
+  tibble::tibble(
+    exercicio = list.files("respostas/"),
+    link = paste0("[link](https://curso-r.github.io/202011-deep-learning/respostas/", exercicio, ")"),
+    gh_link = paste0("[link](https://github.com/curso-r/202011-deep-learning/blob/main/respostas/", exercicio, ")")
+  )
+)
+```
