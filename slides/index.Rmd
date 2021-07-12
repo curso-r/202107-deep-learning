@@ -102,8 +102,27 @@ library(tidyverse)
 - Intervalo de 10 minutos às 8h30.
 - Exercícios em geral vão ser p/ depois da aula e correção no início da aula seguinte.
 - Qualquer dúvida podem abrir o microfone e me interromper. Pode também perguntar pelo chat.
-- Vou criar um tópico de dúvidas no discourse para cada exercício que eu passar.
 - Gravações: vou postar o vídeo no youtube e mandar o link pelo classroom.
+
+---
+
+### Tire suas dúvidas
+
+- Não existe dúvida idiota.
+- Fora do horário de aula ou monitoria:
+  - envie suas perguntas gerais sobre o curso no Classroom.
+  - envie preferencialmente suas perguntas sobre R, principalmente as que envolverem código, no nosso [discourse](https://discourse.curso-r.com/).
+
+[Veja aqui dicas de como fazer uma boa pergunta](https://discourse.curso-r.com/t/como-escrever-uma-boa-pergunta/542).
+
+### Por que usar o discourse?
+
+Muito melhor para escrever textos que possuem códigos. Com ele, podemos usar o pacote {reprex}!
+
+Mais pessoas acompanhando e respondendo as dúvidas.
+
+Em um ambiente aberto, as suas dúvidas vão contribuir com a comunidade.
+
 
 ---
 
