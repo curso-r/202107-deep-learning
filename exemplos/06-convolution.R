@@ -27,7 +27,7 @@ new_img <- new_img[-c(1, nrow(new_img)), -c(1, ncol(new_img))]
 plot(as.raster(new_img/max(new_img)))
 
 
-# ---------- como Keras faz -----------------
+# ---------- como o Keras faz -----------------
 
 w2 <- w
 dim(w2) <- c(dim(w2), 1, 1)
