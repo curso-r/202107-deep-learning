@@ -30,9 +30,11 @@ model %>%
   fit(
     x = x,
     y = y,
-    batch_size = 2, 
+    batch_size = 1, 
     epochs = 5
   )
 
 get_weights(model)
 predict(model, x)
+
+

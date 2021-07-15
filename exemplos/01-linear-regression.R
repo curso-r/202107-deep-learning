@@ -39,6 +39,7 @@ b <- 0
 lr <- 0.1
 
 for (step in 1:500) {
+  
   y_hat <- model(w, b, x)
   
   w <- w - lr*mean(dl_dyhat(y_hat) * dyhat_dw(w))

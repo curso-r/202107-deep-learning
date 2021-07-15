@@ -966,6 +966,7 @@ cross_entropy <- function(y_hat) {
 ]
 
 ---
+class: middle, center
 
 exercicio 06: exercicios/06-mlp-mnist.R
 
@@ -1074,6 +1075,8 @@ Fonte: [Conv arithmetic](https://github.com/vdumoulin/conv_arithmetic)
 ]
 
 ---
+class: middle, center
+
 
 exemplo 06: convolution.R
 

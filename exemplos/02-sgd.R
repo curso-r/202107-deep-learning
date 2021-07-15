@@ -44,9 +44,7 @@ for (epoch in 1:2) {
     
     w <- w - lr*(dl_dyhat(y_hat) * dyhat_dw(w))[i]
     b <- b - lr*(dl_dyhat(y_hat) * dyhat_db(b))[i]
-    
   }
-  
   print(loss(y, y_hat))
 }
 
