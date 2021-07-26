@@ -17,7 +17,8 @@ for(i in 1:n) {
     x[i,,1] <- seq(from = max(v), to = min(v), length.out = l)
 }
 
-plot(x[1,,])
+plot(x[5,,])
+x[2,,]
 
 # Model ------------------------------------------------------------
 
@@ -54,16 +55,18 @@ sigm <- function(x) {
 
 w <- get_weights(model)
 
-s <- 0
-c <- 0
-x_ <- x[1,,]
+s[256] <- 0
+c[256] <- 0
+x_ <- x[1,32,]
+for(i: 1:256)
 for (t in 1:l) {
   
+  f[1]     <- sigm(w[[2]][1,2]*s + w[[1]][1,2]*x_[t])
+  
   i     <- sigm(w[[2]][1,1]*s + w[[1]][1,1]*x_[t])
-  f     <- sigm(w[[2]][1,2]*s + w[[1]][1,2]*x_[t])
   c_hat <- tanh(w[[2]][1,3]*s + w[[1]][1,3]*x_[t])
   
-  c <- f*c + i*c_hat
+  c[i] <- f*c + i*c_hat
   o <- sigm(s*w[[2]][1,4] + w[[1]][1,4]*x_[t])
   s <- o*tanh(c)
   

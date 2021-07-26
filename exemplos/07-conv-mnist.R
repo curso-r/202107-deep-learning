@@ -8,6 +8,7 @@ y <- to_categorical(base$train$y)
 
 dim(x)
 dim(y)
+y[1:5,]
 
 # Model definition ---------------------------------------------
 
@@ -20,7 +21,7 @@ output <- input %>%
   layer_max_pooling_2d(pool_size = c(2,2)) %>% 
   
   layer_conv_2d(kernel_size = c(3,3), filters = 64, 
-                activation = "relu", padding = "same", use_bias = TRUE) %>% 
+                activation = "relu", padding = "same", use_bias = FALSE) %>% 
   layer_max_pooling_2d(pool_size = c(2,2)) %>% 
   
   layer_conv_2d(kernel_size = c(3,3), filters = 128, 
@@ -42,7 +43,7 @@ summary(model)
 model %>% 
   compile(
     loss = "categorical_crossentropy",
-    optimizer = "sgd",
+    optimizer = optimizer_sgd(),
     metrics = "accuracy"
   )
 
@@ -61,7 +62,7 @@ table(base$train$y, y_pred_class)
 
 # Salvar ------------------------------------------------------------------
 
-
+save_model_tf(model, "modelo-mnist/")
 
 
 

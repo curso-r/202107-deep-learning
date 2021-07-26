@@ -23,7 +23,6 @@ output <- input %>%
   layer_dense(units = 1, activation = "sigmoid")
 
 model <- keras_model(input, output)
-
 summary(model)
 
 model %>% 

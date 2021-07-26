@@ -15,9 +15,11 @@ quantile(n_palavras, c(0.5, 0.75, 0.85, 0.9, 0.95, 0.99, 1))
 
 # Layer para vetorizacao --------
 
-vectorize <- layer_text_vectorization(max_tokens = 10000, output_mode = "int", 
-                                      pad_to_max_tokens = TRUE,
-                                      output_sequence_length = 150
+vectorize <- layer_text_vectorization(
+  max_tokens = 10000, 
+  output_mode = "int", 
+  pad_to_max_tokens = TRUE,
+  output_sequence_length = 150
 )
 
 vectorize %>% 
@@ -30,10 +32,13 @@ vocab <- get_vocabulary(vectorize)
 input <- layer_input(shape = 1, dtype = "string")
 output <-  input %>%
   vectorize() %>% 
-  layer_embedding(input_dim = length(vocab) + 2, output_dim = 32, 
-                  mask_zero = TRUE) %>% 
-  #layer_lstm(units = 256) %>% 
-  layer_cudnn_lstm(units = 256) %>% 
+  layer_embedding(
+    input_dim = length(vocab), 
+    output_dim = 32, 
+    mask_zero = TRUE
+  ) %>% 
+  layer_lstm(units = 256) %>% 
+  #layer_cudnn_lstm(units = 256) %>% 
   layer_dense(units = ncol(y), activation = "sigmoid")
 
 model <- keras_model(input, output)

@@ -8,13 +8,14 @@ plot(as.raster(img))
 # vamos criar um 'kernel' - w
 
 w <- matrix(runif(9), nrow = 3, ncol = 3)
+w <- cbind(c(0,0,0), c(1,1,1), c(0,0,0))
 
 # vizinhança de tamanho 3x3
-i <- 12
-j <- 16
+i <- 9
+j <- 12
 
 vizinhos <- img[i + (-1):1, j + (-1):1]
-valor <- sum(w*vizinhos)
+valor <- ativacao(sum(w*vizinhos + b))
 
 new_img <- img
 for (i in 2:(nrow(img) - 1)) {

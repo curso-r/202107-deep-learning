@@ -62,8 +62,6 @@ for (t in 1:l) {
   s_hat <- tanh(w[[2]][1,3]*s*r + w[[1]][1,3]*x_[t])
   
   s <- z * s + (1-z)*s_hat
-  
-  
 }
 sigm(s)
 

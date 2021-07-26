@@ -20,7 +20,6 @@ FLAGS <- flags(
   flag_integer("epochs", 10)
 )
 
-
 # Read dataset ------------------------------------------------------------
 
 df <- readr::read_csv(
@@ -35,7 +34,6 @@ target <- df %>%
 # Text vectorization ------------------------------------------------------
 
 text_vectorization <- layer_text_vectorization(
-  split = "whitespace",
   max_tokens = FLAGS$max_vocab_size, 
   output_sequence_length = FLAGS$max_sequence_length
 )
@@ -48,7 +46,7 @@ library(tidyverse)
 # download.file("http://nlp.stanford.edu/data/glove.6B.zip", "glove.zip")
 
 glove <- read_delim(
-  unz("glove.zip", sprintf("glove.6B.%dd.txt", FLAGS$embedding_dim)),
+  unz("glove.6B.zip", sprintf("glove.6B.%dd.txt", FLAGS$embedding_dim)),
   delim = " ", 
   col_names = FALSE, 
   quote = ""
@@ -68,8 +66,8 @@ get_embedding_weights <- function(vocab, pre_trained) {
   x <- pre_trained[idx,]
   x[is.na(x)] <- 0
   x <- rbind(
-    rep(0, ncol(x)), # padding
-    rep(0, ncol(x)), # oov token
+    # rep(0, ncol(x)), # padding
+    # rep(0, ncol(x)), # oov token
     x
   )
   x
@@ -92,7 +90,8 @@ input <- layer_input(shape = 1L, dtype = "string")
 output <- input %>% 
   text_vectorization() %>% 
   embedding_layer() %>% 
-  layer_lstm(units = 15, return_sequences = TRUE) %>% 
+  layer_lstm(units = 32, return_sequences = TRUE) %>% 
+  layer_lstm(units = 32, return_sequences = TRUE) %>% 
   layer_global_max_pooling_1d() %>% 
   layer_dense(units = ncol(target), activation = "sigmoid")
 

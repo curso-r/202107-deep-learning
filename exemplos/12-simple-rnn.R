@@ -17,7 +17,7 @@ for(i in 1:n) {
     x[i,,1] <- seq(from = max(v), to = min(v), length.out = l)
 }
 
-plot(x[6,,])
+plot(x[1,,])
 
 # Model ------------------------------------------------------------
 
@@ -27,8 +27,8 @@ tensorflow::tf$keras$backend$set_floatx("float64")
 input <- layer_input(shape = c(l,1))
 
 output <- input %>% 
-  layer_simple_rnn(units = 1, 
-                   activation = "sigmoid", use_bias = FALSE)
+  layer_simple_rnn(units = 1, activation = "sigmoid", 
+                   use_bias = FALSE)
 
 model <- keras_model(input, output)
 
@@ -53,9 +53,6 @@ for (i in 1:l) {
   s <- sigm(x_[i]*w[[1]] + s*w[[2]])
 }
 s
-
-loss(s, cresc)
-
 
 predict(model, x)[1,]
 

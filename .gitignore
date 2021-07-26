@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 modelo-pre-treinado
+modelo-mnist
+glove.6B.zip
+glove
