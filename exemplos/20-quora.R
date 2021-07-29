@@ -27,12 +27,13 @@ vocab <- get_vocabulary(vectorize)
 # Preparar camadas de embedding -----------
 
 embedding <- layer_embedding(
-  input_dim = length(vocab) + 2, 
+  input_dim = length(vocab), 
   output_dim = 256
 )
 
 seq_embedding <- layer_lstm(
-  units = 128
+  units = 128,
+  recurrent_activation = "sigmoid"
 )
 
 # Definição do modelo ----------------------
@@ -66,3 +67,7 @@ model %>% compile(
 model %>% 
   fit(list(question1, question2), is_duplicate,
       validation_split = 0.2, batch_size = 64)
+
+
+predict(model, list(question2[1], question1[1]))
+

@@ -30,9 +30,9 @@ vocab <- get_vocabulary(vectorize)
 input <- layer_input(shape = 1, dtype = "string")
 output <-  input %>%
   vectorize() %>% 
-  layer_embedding(input_dim = length(vocab) + 2, output_dim = 32, 
+  layer_embedding(input_dim = length(vocab), output_dim = 32, 
                   mask_zero = TRUE) %>% 
-  bidirectional(layer = layer_lstm(units = 256, return_sequences = TRUE)) %>% 
+  bidirectional(merge_mode = "concat", layer = layer_lstm(units = 256, return_sequences = TRUE, recurrent_activation = "sigmoid")) %>% 
   layer_global_average_pooling_1d() %>% 
   layer_dense(units = ncol(y), activation = "sigmoid")
 

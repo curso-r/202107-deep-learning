@@ -32,9 +32,9 @@ output <-  input %>%
   vectorize() %>% 
   layer_embedding(input_dim = length(vocab) + 2, output_dim = 32, 
                   mask_zero = TRUE) %>% 
-  layer_lstm(units = 256, return_sequences = TRUE) %>% 
-  layer_lstm(units = 128, return_sequences = TRUE) %>% 
-  layer_lstm(units = 64) %>% 
+  layer_lstm(units = 256, recurrent_activation = "sigmoid", return_sequences = TRUE) %>% 
+  layer_lstm(units = 128, recurrent_activation = "sigmoid", return_sequences = TRUE) %>% 
+  layer_lstm(units = 64, recurrent_activation = "sigmoid") %>% 
   layer_dense(units = ncol(y), activation = "sigmoid")
 
 model <- keras_model(input, output)

@@ -53,13 +53,13 @@ df <- df %>%
 
 # Preparando os dados ----------------
 
-historico <- 30*24
+historico <- 365*24
 previsao <- 24
-pulos <- 3*24
+pulos <- 24
 
 janelas <- seq(
   from = historico, 
-  to = nrow(df) - previsao -1, 
+  to = nrow(df) - previsao - 1, 
   by = pulos
 )
 
@@ -83,14 +83,17 @@ for (i in seq_along(janelas)) {
   
 }
 
+dim(x)
+dim(y)
+
 # Definindo o modelo --------------------
 
 library(keras)
 
 input <- layer_input(shape = c(historico, ncol(data)))
 output <- input %>% 
-  layer_lstm(units = 32, return_sequences = TRUE) %>% 
-  layer_lstm(units = 128) %>% 
+  layer_lstm(units = 32, return_sequences = TRUE, recurrent_activation = "sigmoid") %>% 
+  layer_lstm(units = 128, recurrent_activation = "sigmoid") %>% 
   layer_dense(units = 512, activation = "relu") %>% 
   layer_dense(units = previsao * (ncol(data) - 4)) %>% 
   layer_reshape(target_shape = c(previsao, ncol(data) -4))
@@ -114,7 +117,7 @@ x_test <- x[-id,,]
 y_test <- y[-id,,]
 pred <- predict(model, x_test)
 
-obs <- 3
+obs <- 600
 
 historico <- 
   x_test[obs,,1:7] %>% 
