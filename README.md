@@ -97,6 +97,7 @@ nosso [discourse](https://discourse.curso-r.com/).
 | 22-unet.R                    | [link](https://curso-r.github.io/202107-deep-learning/exemplos/22-unet.R)                    | [link](https://github.com/curso-r/202107-deep-learning/blob/main/exemplos/22-unet.R)                    |
 | 23-captcha.R                 | [link](https://curso-r.github.io/202107-deep-learning/exemplos/23-captcha.R)                 | [link](https://github.com/curso-r/202107-deep-learning/blob/main/exemplos/23-captcha.R)                 |
 | 24-torch-luz.R               | [link](https://curso-r.github.io/202107-deep-learning/exemplos/24-torch-luz.R)               | [link](https://github.com/curso-r/202107-deep-learning/blob/main/exemplos/24-torch-luz.R)               |
+| 25-DCGAN.R                   | [link](https://curso-r.github.io/202107-deep-learning/exemplos/25-DCGAN.R)                   | [link](https://github.com/curso-r/202107-deep-learning/blob/main/exemplos/25-DCGAN.R)                   |
 
 #### Exercicios
 
