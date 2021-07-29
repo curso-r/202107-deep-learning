@@ -37,7 +37,7 @@ Redistributable for Visual Studio 2015, 2017 and
 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 Baixar a versão x64.
 
-2.  Execute as seguintes linhas de código em uma sessão limpa do R.
+1.  Execute as seguintes linhas de código em uma sessão limpa do R.
     (Certifique-se de fechar todas as outras sessões do R/RStudio que
     estiverem abertas no seu computador).
 
@@ -49,7 +49,7 @@ Baixar a versão x64.
     keras::install_keras()
     tfhub::install_tfhub()
 
-3.  Verifique a instalação com:
+1.  Verifique a instalação com:
 
 <!-- -->
 
@@ -96,6 +96,7 @@ nosso [discourse](https://discourse.curso-r.com/).
 | 21-series-temporais.R        | [link](https://curso-r.github.io/202107-deep-learning/exemplos/21-series-temporais.R)        | [link](https://github.com/curso-r/202107-deep-learning/blob/main/exemplos/21-series-temporais.R)        |
 | 22-unet.R                    | [link](https://curso-r.github.io/202107-deep-learning/exemplos/22-unet.R)                    | [link](https://github.com/curso-r/202107-deep-learning/blob/main/exemplos/22-unet.R)                    |
 | 23-captcha.R                 | [link](https://curso-r.github.io/202107-deep-learning/exemplos/23-captcha.R)                 | [link](https://github.com/curso-r/202107-deep-learning/blob/main/exemplos/23-captcha.R)                 |
+| 24-torch-luz.R               | [link](https://curso-r.github.io/202107-deep-learning/exemplos/24-torch-luz.R)               | [link](https://github.com/curso-r/202107-deep-learning/blob/main/exemplos/24-torch-luz.R)               |
 
 #### Exercicios
 
